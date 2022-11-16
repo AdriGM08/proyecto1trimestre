@@ -73,7 +73,7 @@ public class Inicio extends JFrame {
 		btnNewButton_2.setBounds(30, 274, 140, 46);
 		contentPane.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("Compras");
+		JButton btnNewButton_3 = new JButton("");
 		btnNewButton_3.setFont(new Font("Papyrus", Font.BOLD, 15));
 		btnNewButton_3.setBounds(30, 331, 140, 46);
 		contentPane.add(btnNewButton_3);
