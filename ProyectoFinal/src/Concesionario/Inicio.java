@@ -36,7 +36,7 @@ public class Inicio extends JFrame {
 	 * Create the frame.
 	 */
 	public Inicio() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("\\ProyectoFinal\\img\\LOGOCONCESIONARIO.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img\\LOGOCONCESIONARIO.png"));
 		setTitle("Inicio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 701, 478);
@@ -84,7 +84,7 @@ public class Inicio extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("\\ProyectoFinal\\img\\911.jpeg"));
+		lblNewLabel_2.setIcon(new ImageIcon("img\\911.jpeg"));
 		lblNewLabel_2.setBounds(212, 0, 473, 439);
 		contentPane.add(lblNewLabel_2);
 	}
