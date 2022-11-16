@@ -6,5 +6,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
+=======
+	<classpathentry kind="lib" path="C:/Users/Mañana_posx/Downloads/mysql-connector-java-8.0.30.jar"/>
+>>>>>>> branch 'master' of https://github.com/AdriGM08/proyecto1trimestre.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
