@@ -31,6 +31,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 
 
@@ -93,28 +94,58 @@ public class proveedor extends JFrame {
 	  JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	  tabbedPane.setBounds(0, 0, 685, 439);
 	  frame.getContentPane().add(tabbedPane);
-
-	  JLayeredPane layeredPane = new JLayeredPane();
-	  layeredPane.setBackground(new Color(51, 153, 204));
-	  tabbedPane.addTab("index", null, layeredPane, null);
-	  layeredPane.setOpaque(true);
-
-	  JLabel lblNewLabel = new JLabel("<html><h1>CONCESIONARIO</h1></html>");
-	  lblNewLabel.setBounds(96, 11, 210, 67);
-	  layeredPane.add(lblNewLabel);
-
-	  JLabel lblNewLabel_1 = new JLabel("");
-	  lblNewLabel_1.setBounds(10, 92, 46, 14);
-	  layeredPane.add(lblNewLabel_1);
-
-	  JLabel lblNewLabel_2 = new JLabel("Somos el concesionario de Adrian jeje");
-	  lblNewLabel_2.setBounds(10, 117, 399, 67);
-	  layeredPane.add(lblNewLabel_2);
+	  
+	  	  JLayeredPane layeredPane = new JLayeredPane();
+	  	  layeredPane.setBackground(Color.WHITE);
+	  	  tabbedPane.addTab("index", null, layeredPane, null);
+	  	  layeredPane.setOpaque(true);
+	  	  
+	  	  	  JLabel lblNewLabel = new JLabel("Proveedores");
+	  	  	  lblNewLabel.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
+	  	  	  lblNewLabel.setBounds(10, 11, 160, 67);
+	  	  	  layeredPane.add(lblNewLabel);
+	  	  	  
+	  	  	  JButton btnNewButton_3 = new JButton("INICIO\r\n");
+	  	  	  btnNewButton_3.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+	  	  	  btnNewButton_3.addActionListener(new ActionListener() {
+	  	  	  	public void actionPerformed(ActionEvent e) {
+	  	  	  		
+	  	  	  		Inicio.main(null);
+	  	  	  	}
+	  	  	  });
+	  	  	  btnNewButton_3.setBounds(10, 365, 119, 35);
+	  	  	  layeredPane.add(btnNewButton_3);
+	  	  	  
+	  	  	  JLabel lblAltaDarDe = new JLabel("ALTA: Dar de alta a nuevos proveedores");
+	  	  	  lblAltaDarDe.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+	  	  	  lblAltaDarDe.setBounds(10, 89, 293, 45);
+	  	  	  layeredPane.add(lblAltaDarDe);
+	  	  	  
+	  	  	  JLabel lblBajaEliminarProveedores = new JLabel("BAJA: Eliminar proveedores");
+	  	  	  lblBajaEliminarProveedores.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+	  	  	  lblBajaEliminarProveedores.setBounds(10, 145, 293, 45);
+	  	  	  layeredPane.add(lblBajaEliminarProveedores);
+	  	  	  
+	  	  	  JLabel lblConsultarMuestraTodos = new JLabel("CONSULTAR: Muestra todos los proveedores");
+	  	  	  lblConsultarMuestraTodos.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+	  	  	  lblConsultarMuestraTodos.setBounds(10, 201, 307, 45);
+	  	  	  layeredPane.add(lblConsultarMuestraTodos);
+	  	  	  
+	  	  	  JLabel lblActualizarModificaLos = new JLabel("ACTUALIZAR: Modifica los proveedores");
+	  	  	  lblActualizarModificaLos.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+	  	  	  lblActualizarModificaLos.setBounds(10, 257, 307, 45);
+	  	  	  layeredPane.add(lblActualizarModificaLos);
+	  	  	  
+	  	  	  JLabel lblNewLabel_1 = new JLabel("");
+	  	  	  lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\eclipse-workspace\\ProyectoFinal1\\img\\inicioproveedor.jpg"));
+	  	  	  lblNewLabel_1.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
+	  	  	  lblNewLabel_1.setBounds(321, 0, 362, 411);
+	  	  	  layeredPane.add(lblNewLabel_1);
 
 	  JLayeredPane layeredPane_1 = new JLayeredPane();
 	  layeredPane_1.setForeground(new Color(255, 255, 255));
 	  layeredPane_1.setBackground(new Color(0, 204, 255));
-	  tabbedPane.addTab("VENDER", null, layeredPane_1, null);
+	  tabbedPane.addTab("ALTA", null, layeredPane_1, null);
 	  layeredPane_1.setOpaque(true);
 
 	  JLabel lblNewLabel_3 = new JLabel("<html><h2>VENDER</h2></html>");
@@ -123,7 +154,7 @@ public class proveedor extends JFrame {
 	  lblNewLabel_3.setBounds(10, 11, 165, 40);
 	  layeredPane_1.add(lblNewLabel_3);
 
-	  JButton btnNewButton = new JButton("VENDER");
+	  JButton btnNewButton = new JButton("ALTA");
 	  btnNewButton.addActionListener(new ActionListener() {
 	  public void actionPerformed(ActionEvent e) {
 
@@ -243,7 +274,7 @@ public class proveedor extends JFrame {
 
 	  JLayeredPane layeredPane_2 = new JLayeredPane();
 	  layeredPane_2.setBackground(new Color(0, 204, 255));
-	  tabbedPane.addTab("baja", null, layeredPane_2, null);
+	  tabbedPane.addTab("BAJA", null, layeredPane_2, null);
 	  frame.setVisible(false);
 	  layeredPane_2.setOpaque(true);
 
@@ -455,7 +486,7 @@ public class proveedor extends JFrame {
 
 	  JLayeredPane layeredPane_3 = new JLayeredPane();
 	  layeredPane_3.setBackground(new Color(0, 204, 255));
-	  tabbedPane.addTab("consultar", null, layeredPane_3, null);
+	  tabbedPane.addTab("CONSULTAR", null, layeredPane_3, null);
 	  layeredPane_3.setOpaque(true);
 	
 
@@ -553,7 +584,7 @@ public class proveedor extends JFrame {
 
 	  JLayeredPane layeredPane_4 = new JLayeredPane();
 	  layeredPane_4.setBackground(new Color(0, 204, 255));
-	  tabbedPane.addTab("actualizar", null, layeredPane_4, null);
+	  tabbedPane.addTab("ACTUALIZAR", null, layeredPane_4, null);
 	  layeredPane_4.setOpaque(true);
 
 	  JLabel lblNewLabel_10 = new JLabel("<html><h2>Actualizar</h2></html>");
