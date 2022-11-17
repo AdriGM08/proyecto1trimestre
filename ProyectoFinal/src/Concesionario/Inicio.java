@@ -145,7 +145,7 @@ public class Inicio extends JFrame {
 		btnNewButton.setBackground(new Color(153, 0, 0));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-		btnNewButton.setBounds(30, 143, 140, 46);
+		btnNewButton.setBounds(30, 370, 140, 46);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Opciones:");
@@ -173,17 +173,24 @@ public class Inicio extends JFrame {
 		btnNewButton_3.setForeground(new Color(255, 255, 255));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Compras.main(null);
 			}
 		});
 		btnNewButton_3.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-		btnNewButton_3.setBounds(30, 370, 140, 46);
+		btnNewButton_3.setBounds(30, 199, 140, 46);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Proveedores");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Proveedor.main(null);
+				
+			}
+		});
 		btnNewButton_4.setBackground(new Color(153, 0, 0));
 		btnNewButton_4.setForeground(new Color(255, 255, 255));
 		btnNewButton_4.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-		btnNewButton_4.setBounds(30, 200, 140, 45);
+		btnNewButton_4.setBounds(30, 143, 140, 45);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
