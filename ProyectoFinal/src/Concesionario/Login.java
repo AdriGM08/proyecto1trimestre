@@ -126,10 +126,21 @@ public class Login extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblNewLabel.setBounds(0, 0, 44, 38);
 		panel_1.add(lblNewLabel);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\git\\repository\\ProyectoFinal\\src\\img\\LOGOCONCESIONARIO.png"));
+		lblNewLabel_4.setBounds(0, 5, 44, 33);
+		panel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("CONCESIONARIO LPM");
+		lblNewLabel_5.setForeground(Color.BLACK);
+		lblNewLabel_5.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+		lblNewLabel_5.setBounds(49, 0, 183, 38);
+		panel.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(0, 37, 400, 441);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\Desktop\\login.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\git\\repository\\ProyectoFinal\\src\\img\\login.jpg"));
 		contentPane.add(lblNewLabel_1);
 
 		JPanel panel_2 = new JPanel();
@@ -139,14 +150,16 @@ public class Login extends JFrame {
 		panel_2.setLayout(null);
 
 		JLabel lblNewLabel_2 = new JLabel("Iniciar Sesión");
+		lblNewLabel_2.setForeground(new Color(0, 0, 0));
 		lblNewLabel_2.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Papyrus", Font.BOLD | Font.ITALIC, 30));
+		lblNewLabel_2.setFont(new Font("Baskerville Old Face", Font.BOLD, 30));
 		lblNewLabel_2.setBounds(0, 77, 301, 43);
 		panel_2.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("USUARIO");
-		lblNewLabel_3.setFont(new Font("Papyrus", Font.BOLD | Font.ITALIC, 12));
+		lblNewLabel_3.setForeground(new Color(0, 0, 0));
+		lblNewLabel_3.setFont(new Font("Baskerville Old Face", Font.BOLD | Font.ITALIC, 18));
 		lblNewLabel_3.setToolTipText("Ingrese su nombre de usuario");
 		lblNewLabel_3.setBounds(21, 158, 258, 23);
 		panel_2.add(lblNewLabel_3);
@@ -157,7 +170,8 @@ public class Login extends JFrame {
 		panel_2.add(separator);
 
 		JLabel lblNewLabel_3_1 = new JLabel("CONTRASEÑA");
-		lblNewLabel_3_1.setFont(new Font("Papyrus", Font.BOLD | Font.ITALIC, 12));
+		lblNewLabel_3_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_3_1.setFont(new Font("Baskerville Old Face", Font.BOLD | Font.ITALIC, 18));
 		lblNewLabel_3_1.setBounds(21, 252, 258, 23);
 		panel_2.add(lblNewLabel_3_1);
 
@@ -190,21 +204,20 @@ public class Login extends JFrame {
 				String password = passwordField.getText();
 				if (usuario.equals("lpm") && password.equals("lpm")) {
 					JOptionPane.showMessageDialog(null, "Iniciando Sesión");
-					JFrame a = new JFrame();
-					a.setBounds(100,100,1000,600);
-					a.setVisible(true);
-					a.setDefaultCloseOperation(EXIT_ON_CLOSE);
+					Inicio inicio = new Inicio();
+					inicio.setLocationRelativeTo(null);
+					inicio.setVisible(true);
+					inicio.setDefaultCloseOperation(EXIT_ON_CLOSE);
 					JLabel fondo = new JLabel();
 					JLabel bienvenida = new JLabel("Bienvenido");
 					fondo.setBounds(0,0,1000,500);
-					fondo.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\eclipse-workspace\\JFrame2\\src\\JFrame2\\img\\bienvenido.jpg"));
 				}else {
 				JOptionPane.showMessageDialog(null, "Error!! Contraseña o usuario incorrecto!!");
 			}}
 		});
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.setBackground(new Color(51, 102, 153));
-		btnNewButton.setFont(new Font("Papyrus", Font.BOLD | Font.ITALIC, 15));
+		btnNewButton.setFont(new Font("Baskerville Old Face", Font.BOLD | Font.ITALIC, 18));
 		btnNewButton.setForeground(new Color(204, 0, 0));
 		btnNewButton.setBounds(21, 334, 125, 33);
 		panel_2.add(btnNewButton);
