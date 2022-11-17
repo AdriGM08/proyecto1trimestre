@@ -32,6 +32,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 
 
@@ -57,6 +61,8 @@ public class Proveedor extends JFrame {
 	private JTextField textField_15;
 	private JTextField textField_16;
 	private JTextField textField_1;
+	int xMouse;
+	int yMouse;
 
 	  /**
 	  * Launch the application.
@@ -86,26 +92,34 @@ public class Proveedor extends JFrame {
 	  */
 	  private void initialize() {
 	  frame = new JFrame();
+	  frame.getContentPane().setBackground(new Color(128, 128, 128));
+	  frame.setUndecorated(true);
 	  frame.setForeground(Color.GREEN);
 	  frame.setBounds(100, 100, 701, 478);
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	  frame.getContentPane().setLayout(null);
 
 	  JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-	  tabbedPane.setBounds(0, 0, 685, 439);
+	  tabbedPane.setBorder(null);
+	  tabbedPane.setForeground(new Color(255, 255, 255));
+	  tabbedPane.setBackground(new Color(0, 204, 204));
+	  tabbedPane.setBounds(0, 38, 701, 440);
 	  frame.getContentPane().add(tabbedPane);
 	  
 	  	  JLayeredPane layeredPane = new JLayeredPane();
-	  	  layeredPane.setBackground(Color.WHITE);
-	  	  tabbedPane.addTab("index", null, layeredPane, null);
+	  	  layeredPane.setBackground(new Color(255, 255, 255));
+	  	  tabbedPane.addTab("INDEX", null, layeredPane, null);
 	  	  layeredPane.setOpaque(true);
 	  	  
 	  	  	  JLabel lblNewLabel = new JLabel("Proveedores");
+	  	  	  lblNewLabel.setForeground(new Color(0, 0, 0));
 	  	  	  lblNewLabel.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
 	  	  	  lblNewLabel.setBounds(10, 11, 160, 67);
 	  	  	  layeredPane.add(lblNewLabel);
 	  	  	  
-	  	  	  JButton btnNewButton_3 = new JButton("INICIO\r\n");
+	  	  	  JButton btnNewButton_3 = new JButton("Volver al Inicio");
+	  	  	  btnNewButton_3.setBackground(new Color(102, 51, 0));
+	  	  	  btnNewButton_3.setForeground(new Color(255, 255, 255));
 	  	  	  btnNewButton_3.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
 	  	  	  btnNewButton_3.addActionListener(new ActionListener() {
 	  	  	  	public void actionPerformed(ActionEvent e) {
@@ -113,46 +127,44 @@ public class Proveedor extends JFrame {
 	  	  	  		Inicio.main(null);
 	  	  	  	}
 	  	  	  });
-	  	  	  btnNewButton_3.setBounds(10, 365, 119, 35);
+	  	  	  btnNewButton_3.setBounds(10, 335, 170, 39);
 	  	  	  layeredPane.add(btnNewButton_3);
 	  	  	  
 	  	  	  JLabel lblAltaDarDe = new JLabel("ALTA: Dar de alta a nuevos proveedores");
+	  	  	  lblAltaDarDe.setForeground(new Color(0, 0, 0));
 	  	  	  lblAltaDarDe.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-	  	  	  lblAltaDarDe.setBounds(10, 89, 293, 45);
+	  	  	  lblAltaDarDe.setBounds(10, 89, 346, 45);
 	  	  	  layeredPane.add(lblAltaDarDe);
 	  	  	  
 	  	  	  JLabel lblBajaEliminarProveedores = new JLabel("BAJA: Eliminar proveedores");
+	  	  	  lblBajaEliminarProveedores.setForeground(new Color(0, 0, 0));
 	  	  	  lblBajaEliminarProveedores.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-	  	  	  lblBajaEliminarProveedores.setBounds(10, 145, 293, 45);
+	  	  	  lblBajaEliminarProveedores.setBounds(10, 147, 293, 45);
 	  	  	  layeredPane.add(lblBajaEliminarProveedores);
 	  	  	  
 	  	  	  JLabel lblConsultarMuestraTodos = new JLabel("CONSULTAR: Muestra todos los proveedores");
+	  	  	  lblConsultarMuestraTodos.setForeground(new Color(0, 0, 0));
 	  	  	  lblConsultarMuestraTodos.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-	  	  	  lblConsultarMuestraTodos.setBounds(10, 201, 307, 45);
+	  	  	  lblConsultarMuestraTodos.setBounds(10, 203, 373, 45);
 	  	  	  layeredPane.add(lblConsultarMuestraTodos);
 	  	  	  
 	  	  	  JLabel lblActualizarModificaLos = new JLabel("ACTUALIZAR: Modifica los proveedores");
+	  	  	  lblActualizarModificaLos.setForeground(new Color(0, 0, 0));
 	  	  	  lblActualizarModificaLos.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
-	  	  	  lblActualizarModificaLos.setBounds(10, 257, 307, 45);
+	  	  	  lblActualizarModificaLos.setBounds(10, 259, 373, 45);
 	  	  	  layeredPane.add(lblActualizarModificaLos);
 	  	  	  
 	  	  	  JLabel lblNewLabel_1 = new JLabel("");
 	  	  	  lblNewLabel_1.setIcon(new ImageIcon("img\\inicioproveedor.jpg"));
 	  	  	  lblNewLabel_1.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
-	  	  	  lblNewLabel_1.setBounds(321, 0, 362, 411);
+	  	  	  lblNewLabel_1.setBounds(331, 0, 365, 412);
 	  	  	  layeredPane.add(lblNewLabel_1);
 
 	  JLayeredPane layeredPane_1 = new JLayeredPane();
 	  layeredPane_1.setForeground(new Color(255, 255, 255));
-	  layeredPane_1.setBackground(new Color(0, 204, 255));
+	  layeredPane_1.setBackground(new Color(255, 255, 255));
 	  tabbedPane.addTab("ALTA", null, layeredPane_1, null);
 	  layeredPane_1.setOpaque(true);
-
-	  JLabel lblNewLabel_3 = new JLabel("<html><h2>VENDER</h2></html>");
-	  lblNewLabel_3.setForeground(new Color(255, 255, 255));
-	  lblNewLabel_3.setBackground(new Color(255, 255, 255));
-	  lblNewLabel_3.setBounds(10, 11, 165, 40);
-	  layeredPane_1.add(lblNewLabel_3);
 
 	  JButton btnNewButton = new JButton("ALTA");
 	  btnNewButton.addActionListener(new ActionListener() {
@@ -211,80 +223,105 @@ public class Proveedor extends JFrame {
 
 	  });
 	  btnNewButton.setForeground(new Color(255, 255, 255));
-	  btnNewButton.setBackground(new Color(0, 0, 0));
-	  btnNewButton.setBounds(297, 176, 122, 46);
+	  btnNewButton.setBackground(new Color(102, 102, 102));
+	  btnNewButton.setBounds(20, 331, 138, 40);
 	  btnNewButton.setOpaque(true);
 	  layeredPane_1.add(btnNewButton);
 
 	  textField_2 = new JTextField();
 	  textField_2.setForeground(Color.BLACK);
 	  textField_2.setBackground(new Color(255, 255, 255));
-	  textField_2.setBounds(100, 100, 103, 20);
+	  textField_2.setBounds(100, 100, 122, 20);
 	  layeredPane_1.add(textField_2);
 	  textField_2.setColumns(10);
 
 	  textField_3 = new JTextField();
 	  textField_3.setBackground(new Color(255, 255, 255));
 	  textField_3.setForeground(Color.BLACK);
-	  textField_3.setBounds(100, 131, 103, 20);
+	  textField_3.setBounds(100, 131, 122, 20);
 	  layeredPane_1.add(textField_3);
 	  textField_3.setColumns(10);
 
 	  JLabel lblNewLabel_6 = new JLabel("Empresa");
-	  lblNewLabel_6.setBounds(20, 103, 59, 14);
+	  lblNewLabel_6.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_6.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_6.setBounds(20, 103, 81, 14);
 	  layeredPane_1.add(lblNewLabel_6);
 
 	  JLabel lblNewLabel_7 = new JLabel("Dirección");
-	  lblNewLabel_7.setBounds(20, 134, 70, 14);
+	  lblNewLabel_7.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_7.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_7.setBounds(20, 134, 81, 14);
 	  layeredPane_1.add(lblNewLabel_7);
 
-	  JLabel lblNewLabel_7_1 = new JLabel("Telefono");
-	  lblNewLabel_7_1.setBounds(20, 165, 59, 14);
+	  JLabel lblNewLabel_7_1 = new JLabel("Teléfono");
+	  lblNewLabel_7_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_7_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_7_1.setBounds(20, 165, 81, 17);
 	  layeredPane_1.add(lblNewLabel_7_1);
 
 	  textField = new JTextField();
 	  textField.setForeground(Color.BLACK);
 	  textField.setColumns(10);
 	  textField.setBackground(new Color(255, 255, 255));
-	  textField.setBounds(100, 162, 103, 20);
+	  textField.setBounds(100, 162, 122, 20);
 	  layeredPane_1.add(textField);
 	  
 	  textField_14 = new JTextField();
 	  textField_14.setForeground(Color.BLACK);
 	  textField_14.setColumns(10);
 	  textField_14.setBackground(Color.WHITE);
-	  textField_14.setBounds(100, 193, 103, 20);
+	  textField_14.setBounds(100, 193, 122, 20);
 	  layeredPane_1.add(textField_14);
 	  
 	  JLabel lblNewLabel_7_1_1 = new JLabel("Correo");
-	  lblNewLabel_7_1_1.setBounds(20, 196, 59, 14);
+	  lblNewLabel_7_1_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_7_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_7_1_1.setBounds(20, 196, 81, 14);
 	  layeredPane_1.add(lblNewLabel_7_1_1);
 	  
 	  textField_15 = new JTextField();
 	  textField_15.setForeground(Color.BLACK);
 	  textField_15.setColumns(10);
 	  textField_15.setBackground(Color.WHITE);
-	  textField_15.setBounds(100, 224, 103, 20);
+	  textField_15.setBounds(100, 224, 122, 20);
 	  layeredPane_1.add(textField_15);
 	  
 	  JLabel lblNewLabel_7_1_1_1 = new JLabel("Coche");
-	  lblNewLabel_7_1_1_1.setBounds(20, 227, 59, 14);
+	  lblNewLabel_7_1_1_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_7_1_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_7_1_1_1.setBounds(20, 227, 81, 14);
 	  layeredPane_1.add(lblNewLabel_7_1_1_1);
+	  
+	  JLabel lblNewLabel_15 = new JLabel("");
+	  lblNewLabel_15.setIcon(new ImageIcon("img\\Audi-R8.jpg"));
+	  lblNewLabel_15.setBounds(264, 0, 432, 412);
+	  layeredPane_1.add(lblNewLabel_15);
+	  
+	  JLabel lblNewLabel_16 = new JLabel("Nuevo Proveedor");
+	  lblNewLabel_16.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_16.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
+	  lblNewLabel_16.setBounds(10, 11, 160, 67);
+	  layeredPane_1.add(lblNewLabel_16);
 
 
 	  JLayeredPane layeredPane_2 = new JLayeredPane();
-	  layeredPane_2.setBackground(new Color(0, 204, 255));
+	  layeredPane_2.setBackground(new Color(255, 255, 255));
 	  tabbedPane.addTab("BAJA", null, layeredPane_2, null);
 	  frame.setVisible(false);
 	  layeredPane_2.setOpaque(true);
 
-	  JLabel lblNewLabel_8 = new JLabel("<html><h2>Dar de baja</h2></html>");
-	  lblNewLabel_8.setForeground(new Color(255, 255, 255));
-	  lblNewLabel_8.setBounds(10, 11, 130, 24);
+	  JLabel lblNewLabel_8 = new JLabel("Dar de baja");
+	  lblNewLabel_8.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
+	  lblNewLabel_8.setBackground(new Color(0, 0, 0));
+	  lblNewLabel_8.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_8.setBounds(10, 11, 160, 67);
 	  layeredPane_2.add(lblNewLabel_8);
 
 	  JLabel lblNewLabel_9 = new JLabel("Empresa a dar de baja");
-	  lblNewLabel_9.setBounds(10, 44, 116, 24);
+	  lblNewLabel_9.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_9.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_9.setBounds(18, 115, 182, 24);
 	  layeredPane_2.add(lblNewLabel_9);
 
 	  JButton btnNewButton_1 = new JButton("CONSULTAR");
@@ -349,51 +386,59 @@ public class Proveedor extends JFrame {
 
 	  }}});
 	  btnNewButton_1.setForeground(new Color(255, 255, 255));
-	  btnNewButton_1.setBackground(new Color(102, 0, 0));
-	  btnNewButton_1.setBounds(299, 0, 130, 42);
+	  btnNewButton_1.setBackground(new Color(102, 102, 102));
+	  btnNewButton_1.setBounds(107, 63, 106, 31);
 	  layeredPane_2.add(btnNewButton_1);
 
 	  textField_4 = new JTextField();
-	  textField_4.setBounds(136, 46, 86, 20);
+	  textField_4.setBounds(193, 117, 106, 20);
 	  layeredPane_2.add(textField_4);
 	  textField_4.setColumns(10);
 
-	  JLabel lblNewLabel_9_1 = new JLabel("nombre");
-	  lblNewLabel_9_1.setBounds(20, 79, 95, 24);
+	  JLabel lblNewLabel_9_1 = new JLabel("Nombre");
+	  lblNewLabel_9_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_9_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_9_1.setBounds(18, 150, 152, 24);
 	  layeredPane_2.add(lblNewLabel_9_1);
 
 	  textField_9 = new JTextField();
 	  textField_9.setColumns(10);
-	  textField_9.setBounds(94, 81, 86, 20);
+	  textField_9.setBounds(193, 152, 106, 20);
 	  layeredPane_2.add(textField_9);
 
-	  JLabel lblNewLabel_9_1_1 = new JLabel("direccion");
-	  lblNewLabel_9_1_1.setBounds(10, 112, 95, 24);
+	  JLabel lblNewLabel_9_1_1 = new JLabel("Dirección");
+	  lblNewLabel_9_1_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_9_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_9_1_1.setBounds(18, 185, 152, 24);
 	  layeredPane_2.add(lblNewLabel_9_1_1);
 
-	  JLabel lblNewLabel_9_1_1_1 = new JLabel("correo");
-	  lblNewLabel_9_1_1_1.setBounds(10, 182, 95, 24);
+	  JLabel lblNewLabel_9_1_1_1 = new JLabel("Correo electrónico");
+	  lblNewLabel_9_1_1_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_9_1_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_9_1_1_1.setBounds(17, 255, 153, 24);
 	  layeredPane_2.add(lblNewLabel_9_1_1_1);
 
 	  textField_10 = new JTextField();
 	  textField_10.setColumns(10);
-	  textField_10.setBounds(71, 114, 86, 20);
+	  textField_10.setBounds(193, 187, 106, 20);
 	  layeredPane_2.add(textField_10);
 
 	  textField_11 = new JTextField();
 	  textField_11.setColumns(10);
-	  textField_11.setBounds(81, 147, 86, 20);
+	  textField_11.setBounds(193, 222, 106, 20);
 	  layeredPane_2.add(textField_11);
 
 	  textField_12 = new JTextField();
 	  textField_12.setColumns(10);
-	  textField_12.setBounds(54, 184, 86, 20);
+	  textField_12.setBounds(193, 257, 106, 20);
 	  layeredPane_2.add(textField_12);
 
-	  JLabel lblNewLabel_9_1_1_1_1 = new JLabel("telefono");
+	  JLabel lblNewLabel_9_1_1_1_1 = new JLabel("Teléfono");
+	  lblNewLabel_9_1_1_1_1.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_9_1_1_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
 
 
-	  lblNewLabel_9_1_1_1_1.setBounds(10, 145, 95, 24);
+	  lblNewLabel_9_1_1_1_1.setBounds(18, 220, 152, 24);
 
 	  layeredPane_2.add(lblNewLabel_9_1_1_1_1);
 
@@ -442,8 +487,8 @@ public class Proveedor extends JFrame {
 
 
 	  btnNewButton_1_1.setForeground(Color.WHITE);
-	  btnNewButton_1_1.setBackground(new Color(102, 0, 0));
-	  btnNewButton_1_1.setBounds(299, 47, 130, 42);
+	  btnNewButton_1_1.setBackground(new Color(102, 102, 102));
+	  btnNewButton_1_1.setBounds(18, 340, 139, 31);
 	  layeredPane_2.add(btnNewButton_1_1);
 
 	  JButton btnNewButton_1_1_1 = new JButton("BORRAR TODOS");
@@ -471,18 +516,25 @@ public class Proveedor extends JFrame {
 	  }
 	  });
 	  btnNewButton_1_1_1.setForeground(Color.WHITE);
-	  btnNewButton_1_1_1.setBackground(new Color(102, 0, 0));
-	  btnNewButton_1_1_1.setBounds(299, 98, 130, 42);
+	  btnNewButton_1_1_1.setBackground(new Color(102, 102, 102));
+	  btnNewButton_1_1_1.setBounds(160, 340, 139, 31);
 	  layeredPane_2.add(btnNewButton_1_1_1);
 	  
 	  textField_16 = new JTextField();
 	  textField_16.setColumns(10);
-	  textField_16.setBounds(94, 219, 86, 20);
+	  textField_16.setBounds(193, 292, 106, 20);
 	  layeredPane_2.add(textField_16);
 	  
 	  JLabel lblNewLabel_9_1_1_1_2 = new JLabel("Coche");
-	  lblNewLabel_9_1_1_1_2.setBounds(20, 217, 95, 24);
+	  lblNewLabel_9_1_1_1_2.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_9_1_1_1_2.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_9_1_1_1_2.setBounds(18, 290, 152, 24);
 	  layeredPane_2.add(lblNewLabel_9_1_1_1_2);
+	  
+	  JLabel lblNewLabel_3 = new JLabel("");
+	  lblNewLabel_3.setIcon(new ImageIcon("img\\mercedes.jpg"));
+	  lblNewLabel_3.setBounds(319, -2, 377, 414);
+	  layeredPane_2.add(lblNewLabel_3);
 
 	  JLayeredPane layeredPane_3 = new JLayeredPane();
 	  layeredPane_3.setBackground(new Color(0, 204, 255));
@@ -587,7 +639,7 @@ public class Proveedor extends JFrame {
 	  tabbedPane.addTab("ACTUALIZAR", null, layeredPane_4, null);
 	  layeredPane_4.setOpaque(true);
 
-	  JLabel lblNewLabel_10 = new JLabel("<html><h2>Actualizar</h2></html>");
+	  JLabel lblNewLabel_10 = new JLabel("Actualizar");
 	  lblNewLabel_10.setForeground(new Color(255, 255, 255));
 	  lblNewLabel_10.setBounds(10, 11, 135, 30);
 	  layeredPane_4.add(lblNewLabel_10);
@@ -651,6 +703,74 @@ public class Proveedor extends JFrame {
 	  JLabel lblNewLabel_4_1 = new JLabel("coche");
 	  lblNewLabel_4_1.setBounds(10, 222, 46, 14);
 	  layeredPane_4.add(lblNewLabel_4_1);
+	  
+	  JPanel panel = new JPanel();
+	  panel.setBackground(new Color(0, 204, 204));
+	  panel.addMouseMotionListener(new MouseMotionAdapter() {
+	  	@Override
+	  	public void mouseDragged(MouseEvent e) {
+	  		int x = e.getXOnScreen();
+			int y = e.getYOnScreen();
+			this.setLocation(x - xMouse, y - yMouse);
+	  	}
+
+		private void setLocation(int i, int j) {
+			// TODO Auto-generated method stub
+			
+		}
+	  });
+	  panel.addMouseListener(new MouseAdapter() {
+	  	@Override
+	  	public void mousePressed(MouseEvent e) {
+	  		xMouse = e.getX();
+			yMouse = e.getY();
+	  	}
+	  });
+	  panel.setBounds(0, 0, 701, 38);
+	  frame.getContentPane().add(panel);
+	  panel.setLayout(null);
+	  
+	  JPanel panel_1 = new JPanel();
+	  panel_1.setForeground(new Color(255, 255, 255));
+	  panel_1.setBackground(new Color(153, 0, 0));
+	  panel_1.setBounds(657, 0, 44, 38);
+	  panel.add(panel_1);
+	  panel_1.setLayout(null);
+	  
+	  JLabel lblNewLabel_2 = new JLabel("X");
+	  lblNewLabel_2.setForeground(new Color(255, 255, 255));
+	  lblNewLabel_2.setBackground(new Color(153, 0, 0));
+	  lblNewLabel_2.addMouseListener(new MouseAdapter() {
+	  	@Override
+	  	public void mouseClicked(MouseEvent e) {
+			System.exit(0);
+	  	}
+	  	@Override
+	  	public void mouseEntered(MouseEvent e) {
+	  		panel_1.setBackground(Color.red);
+			lblNewLabel_2.setForeground(Color.white);
+	  	}
+	  	@Override
+	  	public void mouseExited(MouseEvent e) {
+	  		panel_1.setBackground(Color.red);
+			lblNewLabel_2.setForeground(Color.white);
+	  	}
+	  });
+	  lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+	  lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 25));
+	  lblNewLabel_2.setBounds(0, 0, 44, 38);
+	  panel_1.add(lblNewLabel_2);
+	  
+	  JLabel lblNewLabel_5 = new JLabel("");
+	  lblNewLabel_5.setIcon(new ImageIcon("img\\LOGOCONCESIONARIO.png"));
+	  lblNewLabel_5.setBounds(0, 5, 44, 33);
+	  panel.add(lblNewLabel_5);
+	  
+	  JLabel lblNewLabel_5_1 = new JLabel("CONCESIONARIO LPM");
+	  lblNewLabel_5_1.setForeground(Color.BLACK);
+	  lblNewLabel_5_1.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+	  lblNewLabel_5_1.setBounds(54, 0, 200, 38);
+	  panel.add(lblNewLabel_5_1);
 	  
 	  btnNewButton_2.addActionListener(new ActionListener() {
 	  public void actionPerformed(ActionEvent e) {
