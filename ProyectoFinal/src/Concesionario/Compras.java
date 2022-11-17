@@ -66,23 +66,27 @@ public class Compras {
 		
 		JLabel lblNewLabel = new JLabel("Compras");
 		lblNewLabel.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
-		lblNewLabel.setBounds(10, 11, 165, 40);
+		lblNewLabel.setBounds(10, 11, 160, 67);
 		layeredPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("ALTA: Dar de alta a nuevos proveedores");
-		lblNewLabel_1.setBounds(10, 62, 387, 34);
+		JLabel lblNewLabel_1 = new JLabel("ALTA: Dar de alta a nuevas compras");
+		lblNewLabel_1.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+		lblNewLabel_1.setBounds(10, 89, 293, 45);
 		layeredPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("BAJA: Eliminar proveedores");
-		lblNewLabel_2.setBounds(10, 107, 365, 34);
+		JLabel lblNewLabel_2 = new JLabel("BAJA: Eliminar compras");
+		lblNewLabel_2.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+		lblNewLabel_2.setBounds(10, 145, 293, 45);
 		layeredPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("CONSULTAR: Muestra todos los proveedores");
-		lblNewLabel_3.setBounds(10, 152, 381, 34);
+		JLabel lblNewLabel_3 = new JLabel("CONSULTAR: Muestra todas las compras");
+		lblNewLabel_3.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+		lblNewLabel_3.setBounds(10, 201, 307, 45);
 		layeredPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("ACTUALIZAR: Modifica los proveedores");
-		lblNewLabel_4.setBounds(10, 197, 403, 34);
+		JLabel lblNewLabel_4 = new JLabel("ACTUALIZAR: Modifica las compras");
+		lblNewLabel_4.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
+		lblNewLabel_4.setBounds(10, 257, 307, 45);
 		layeredPane.add(lblNewLabel_4);
 		
 		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
