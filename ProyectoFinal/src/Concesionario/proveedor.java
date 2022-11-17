@@ -1,4 +1,4 @@
-package Concesionario;
+package ProyectoFinal;
 
 import java.awt.EventQueue;
 
@@ -137,7 +137,7 @@ public class proveedor extends JFrame {
 	  	  	  layeredPane.add(lblActualizarModificaLos);
 	  	  	  
 	  	  	  JLabel lblNewLabel_1 = new JLabel("");
-	  	  	  lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\eclipse-workspace\\ProyectoFinal1\\img\\inicioproveedor.jpg"));
+	  	  	  lblNewLabel_1.setIcon(new ImageIcon("img\\inicioproveedor.jpg"));
 	  	  	  lblNewLabel_1.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
 	  	  	  lblNewLabel_1.setBounds(321, 0, 362, 411);
 	  	  	  layeredPane.add(lblNewLabel_1);
