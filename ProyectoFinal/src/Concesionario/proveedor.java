@@ -95,12 +95,12 @@ public class proveedor extends JFrame {
 	  frame.getContentPane().add(tabbedPane);
 
 	  JLayeredPane layeredPane = new JLayeredPane();
-	  layeredPane.setBackground(new Color(51, 153, 204));
+	  layeredPane.setBackground(Color.RED);
 	  tabbedPane.addTab("index", null, layeredPane, null);
 	  layeredPane.setOpaque(true);
 
-	  JLabel lblNewLabel = new JLabel("<html><h1>CONCESIONARIO</h1></html>");
-	  lblNewLabel.setBounds(96, 11, 210, 67);
+	  JLabel lblNewLabel = new JLabel("<html><h1>PROVEEDORES</h1></html>");
+	  lblNewLabel.setBounds(10, 11, 210, 67);
 	  layeredPane.add(lblNewLabel);
 
 	  JLabel lblNewLabel_1 = new JLabel("");
@@ -108,7 +108,7 @@ public class proveedor extends JFrame {
 	  layeredPane.add(lblNewLabel_1);
 
 	  JLabel lblNewLabel_2 = new JLabel("Somos el concesionario de Adrian jeje");
-	  lblNewLabel_2.setBounds(10, 117, 399, 67);
+	  lblNewLabel_2.setBounds(10, 63, 180, 67);
 	  layeredPane.add(lblNewLabel_2);
 
 	  JLayeredPane layeredPane_1 = new JLayeredPane();
