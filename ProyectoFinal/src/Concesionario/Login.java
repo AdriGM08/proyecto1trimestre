@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 import javax.swing.UIManager;
@@ -27,6 +29,7 @@ import java.awt.Cursor;
 import javax.swing.JTextField;
 
 public class Login extends JFrame {
+	Icon pane;
 
 	int xMouse, yMouse;
 
@@ -55,6 +58,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		pane = new ImageIcon("img\\LOGOCONCESIONARIO.png");
 		setTitle("Login");
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -203,16 +207,10 @@ public class Login extends JFrame {
 				String usuario = txtIngreseSuNombre.getText();
 				String password = passwordField.getText();
 				if (usuario.equals("lpm") && password.equals("lpm")) {
-					JOptionPane.showMessageDialog(null, "Iniciando Sesión");
-					Inicio inicio = new Inicio();
-					inicio.setLocationRelativeTo(null);
-					inicio.setVisible(true);
-					inicio.setDefaultCloseOperation(EXIT_ON_CLOSE);
-					JLabel fondo = new JLabel();
-					JLabel bienvenida = new JLabel("Bienvenido");
-					fondo.setBounds(0,0,1000,500);
+					JOptionPane.showMessageDialog(null, "Iniciando Sesión","CONCESIONARIO LPM", JOptionPane.WARNING_MESSAGE,pane);
+					Inicio.main(null);
 				}else {
-				JOptionPane.showMessageDialog(null, "Error!! Contraseña o usuario incorrecto!!");
+					JOptionPane.showMessageDialog(null, "Error","CONCESIONARIO LPM", JOptionPane.WARNING_MESSAGE,pane);
 			}}
 		});
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
