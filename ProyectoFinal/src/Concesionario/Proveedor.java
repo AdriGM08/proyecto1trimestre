@@ -35,7 +35,7 @@ import javax.swing.ImageIcon;
 
 
 
-public class proveedor extends JFrame {
+public class Proveedor extends JFrame {
 
 	private JFrame frame;
 	private JTextField textField_2;
@@ -65,7 +65,7 @@ public class proveedor extends JFrame {
 	  EventQueue.invokeLater(new Runnable() {
 	  public void run() {
 	  try {
-	  proveedor window = new proveedor();
+	  Proveedor window = new Proveedor();
 	  window.frame.setVisible(true);
 	  } catch (Exception e) {
 	  e.printStackTrace();
@@ -77,7 +77,7 @@ public class proveedor extends JFrame {
 	  /**
 	  * Create the application.
 	  */
-	  public proveedor() {
+	  public Proveedor() {
 	  initialize();
 	  }
 
