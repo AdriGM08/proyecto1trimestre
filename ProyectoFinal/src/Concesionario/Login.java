@@ -1,4 +1,4 @@
-package ProyectoFinal;
+package Concesionario;
 
 import java.awt.EventQueue;
 
@@ -128,7 +128,7 @@ public class Login extends JFrame {
 		panel_1.add(lblNewLabel);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\git\\repository\\ProyectoFinal\\src\\img\\LOGOCONCESIONARIO.png"));
+		lblNewLabel_4.setIcon(new ImageIcon("img\\LOGOCONCESIONARIO.png"));
 		lblNewLabel_4.setBounds(0, 5, 44, 33);
 		panel.add(lblNewLabel_4);
 		
@@ -140,7 +140,7 @@ public class Login extends JFrame {
 
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(0, 37, 400, 441);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Mañana_posx\\git\\repository\\ProyectoFinal\\src\\img\\login.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("img\\login.jpg"));
 		contentPane.add(lblNewLabel_1);
 
 		JPanel panel_2 = new JPanel();
