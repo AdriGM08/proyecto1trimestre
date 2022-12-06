@@ -36,6 +36,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import javax.swing.UIManager;
 
 
 
@@ -248,16 +249,16 @@ public class Proveedor extends JFrame {
 	  lblNewLabel_6.setBounds(20, 103, 81, 14);
 	  layeredPane_1.add(lblNewLabel_6);
 
-	  JLabel lblNewLabel_7 = new JLabel("Dirección");
+	  JLabel lblNewLabel_7 = new JLabel("Direcci\u00F3n");
 	  lblNewLabel_7.setForeground(new Color(0, 0, 0));
 	  lblNewLabel_7.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
-	  lblNewLabel_7.setBounds(20, 134, 81, 14);
+	  lblNewLabel_7.setBounds(20, 134, 95, 14);
 	  layeredPane_1.add(lblNewLabel_7);
 
-	  JLabel lblNewLabel_7_1 = new JLabel("Teléfono");
+	  JLabel lblNewLabel_7_1 = new JLabel("Tel\u00E9fono");
 	  lblNewLabel_7_1.setForeground(new Color(0, 0, 0));
 	  lblNewLabel_7_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
-	  lblNewLabel_7_1.setBounds(20, 165, 81, 17);
+	  lblNewLabel_7_1.setBounds(20, 165, 95, 17);
 	  layeredPane_1.add(lblNewLabel_7_1);
 
 	  textField = new JTextField();
@@ -406,13 +407,13 @@ public class Proveedor extends JFrame {
 	  textField_9.setBounds(193, 152, 106, 20);
 	  layeredPane_2.add(textField_9);
 
-	  JLabel lblNewLabel_9_1_1 = new JLabel("Dirección");
+	  JLabel lblNewLabel_9_1_1 = new JLabel("Direcci\u00F3n");
 	  lblNewLabel_9_1_1.setForeground(new Color(0, 0, 0));
 	  lblNewLabel_9_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
 	  lblNewLabel_9_1_1.setBounds(18, 185, 152, 24);
 	  layeredPane_2.add(lblNewLabel_9_1_1);
 
-	  JLabel lblNewLabel_9_1_1_1 = new JLabel("Correo electrónico");
+	  JLabel lblNewLabel_9_1_1_1 = new JLabel("Correo electr\u00F3nico");
 	  lblNewLabel_9_1_1_1.setForeground(new Color(0, 0, 0));
 	  lblNewLabel_9_1_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
 	  lblNewLabel_9_1_1_1.setBounds(17, 255, 153, 24);
@@ -433,7 +434,7 @@ public class Proveedor extends JFrame {
 	  textField_12.setBounds(193, 257, 106, 20);
 	  layeredPane_2.add(textField_12);
 
-	  JLabel lblNewLabel_9_1_1_1_1 = new JLabel("Teléfono");
+	  JLabel lblNewLabel_9_1_1_1_1 = new JLabel("Tel\u00E9fono");
 	  lblNewLabel_9_1_1_1_1.setForeground(new Color(0, 0, 0));
 	  lblNewLabel_9_1_1_1_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
 
@@ -537,7 +538,7 @@ public class Proveedor extends JFrame {
 	  layeredPane_2.add(lblNewLabel_3);
 
 	  JLayeredPane layeredPane_3 = new JLayeredPane();
-	  layeredPane_3.setBackground(new Color(0, 204, 255));
+	  layeredPane_3.setBackground(UIManager.getColor("Button.background"));
 	  tabbedPane.addTab("CONSULTAR", null, layeredPane_3, null);
 	  layeredPane_3.setOpaque(true);
 	
@@ -550,16 +551,19 @@ public class Proveedor extends JFrame {
 
 	         
 
-	  JButton btnNewButton_4 = new JButton("Consultar");
+	  JButton btnNewButton_4 = new JButton("CONSULTAR");
+	  btnNewButton_4.setBackground(new Color(128, 128, 128));
 
-	  btnNewButton_4.setBounds(0, 11, 89, 23);
+	  btnNewButton_4.setBounds(186, 11, 123, 41);
 	  layeredPane_3.add(btnNewButton_4);
 	  DefaultTableModel modelo = new DefaultTableModel();
 	  table_3 = new JTable(modelo);
-	  table_3.setBounds(0, 62, 680, 349);
+	  table_3.setBackground(new Color(128, 128, 128));
+	  table_3.setBounds(10, 63, 676, 338);
 	  layeredPane_3.add(table_3);
 
 	  JButton btnNewButton_5 = new JButton("LIMPIAR");
+	  btnNewButton_5.setBackground(new Color(128, 128, 128));
 	  btnNewButton_5.addActionListener(new ActionListener() {
 	  public void actionPerformed(ActionEvent e) {
 
@@ -576,7 +580,7 @@ public class Proveedor extends JFrame {
 	  }
 	  }
 	  });
-	  btnNewButton_5.setBounds(99, 11, 89, 23);
+	  btnNewButton_5.setBounds(360, 11, 123, 41);
 	  layeredPane_3.add(btnNewButton_5);
 
 
