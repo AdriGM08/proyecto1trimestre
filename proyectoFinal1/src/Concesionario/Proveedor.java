@@ -128,7 +128,7 @@ public class Proveedor extends JFrame {
 	  	  	  		Inicio.main(null);
 	  	  	  	}
 	  	  	  });
-	  	  	  btnNewButton_3.setBounds(10, 335, 170, 39);
+	  	  	  btnNewButton_3.setBounds(61, 335, 170, 39);
 	  	  	  layeredPane.add(btnNewButton_3);
 	  	  	  
 	  	  	  JLabel lblAltaDarDe = new JLabel("ALTA: Dar de alta a nuevos proveedores");
@@ -225,7 +225,7 @@ public class Proveedor extends JFrame {
 	  });
 	  btnNewButton.setForeground(new Color(255, 255, 255));
 	  btnNewButton.setBackground(new Color(102, 102, 102));
-	  btnNewButton.setBounds(20, 331, 138, 40);
+	  btnNewButton.setBounds(55, 296, 138, 40);
 	  btnNewButton.setOpaque(true);
 	  layeredPane_1.add(btnNewButton);
 
@@ -552,18 +552,20 @@ public class Proveedor extends JFrame {
 	         
 
 	  JButton btnNewButton_4 = new JButton("CONSULTAR");
-	  btnNewButton_4.setBackground(new Color(128, 128, 128));
+	  btnNewButton_4.setForeground(new Color(255, 255, 255));
+	  btnNewButton_4.setBackground(new Color(169, 169, 169));
 
 	  btnNewButton_4.setBounds(186, 11, 123, 41);
 	  layeredPane_3.add(btnNewButton_4);
 	  DefaultTableModel modelo = new DefaultTableModel();
 	  table_3 = new JTable(modelo);
-	  table_3.setBackground(new Color(128, 128, 128));
+	  table_3.setBackground(new Color(169, 169, 169));
 	  table_3.setBounds(10, 63, 676, 338);
 	  layeredPane_3.add(table_3);
 
 	  JButton btnNewButton_5 = new JButton("LIMPIAR");
-	  btnNewButton_5.setBackground(new Color(128, 128, 128));
+	  btnNewButton_5.setForeground(new Color(255, 255, 255));
+	  btnNewButton_5.setBackground(new Color(169, 169, 169));
 	  btnNewButton_5.addActionListener(new ActionListener() {
 	  public void actionPerformed(ActionEvent e) {
 
@@ -639,74 +641,88 @@ public class Proveedor extends JFrame {
 
 
 	  JLayeredPane layeredPane_4 = new JLayeredPane();
-	  layeredPane_4.setBackground(new Color(0, 204, 255));
+	  layeredPane_4.setBackground(new Color(255, 255, 255));
 	  tabbedPane.addTab("ACTUALIZAR", null, layeredPane_4, null);
 	  layeredPane_4.setOpaque(true);
 
 	  JLabel lblNewLabel_10 = new JLabel("Actualizar");
-	  lblNewLabel_10.setForeground(new Color(255, 255, 255));
-	  lblNewLabel_10.setBounds(10, 11, 135, 30);
+	  lblNewLabel_10.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
+	  lblNewLabel_10.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_10.setBounds(10, 29, 135, 30);
 	  layeredPane_4.add(lblNewLabel_10);
 
-	  JLabel lblNewLabel_11 = new JLabel("id a actualizar");
-	  lblNewLabel_11.setBounds(10, 70, 85, 14);
+	  JLabel lblNewLabel_11 = new JLabel("Id a actualizar");
+	  lblNewLabel_11.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_11.setBounds(10, 76, 118, 14);
 	  layeredPane_4.add(lblNewLabel_11);
 
 	  textField_5 = new JTextField();
-	  textField_5.setBounds(101, 67, 86, 20);
+	  textField_5.setBounds(121, 73, 102, 20);
 	  layeredPane_4.add(textField_5);
 	  textField_5.setColumns(10);
 
-	  JLabel lblNewLabel_12 = new JLabel("marca");
-	  lblNewLabel_12.setBounds(10, 98, 46, 14);
+	  JLabel lblNewLabel_12 = new JLabel("Marca");
+	  lblNewLabel_12.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_12.setBounds(10, 114, 93, 14);
 	  layeredPane_4.add(lblNewLabel_12);
 
 	  textField_6 = new JTextField();
-	  textField_6.setBounds(101, 95, 86, 20);
+	  textField_6.setBounds(121, 111, 102, 20);
 	  layeredPane_4.add(textField_6);
 	  textField_6.setColumns(10);
 
 	  textField_7 = new JTextField();
-	  textField_7.setBounds(101, 126, 86, 20);
+	  textField_7.setBounds(121, 149, 102, 20);
 	  layeredPane_4.add(textField_7);
 	  textField_7.setColumns(10);
 
 	  textField_8 = new JTextField();
-	  textField_8.setBounds(101, 157, 86, 20);
+	  textField_8.setBounds(121, 188, 102, 20);
 	  layeredPane_4.add(textField_8);
 	  textField_8.setColumns(10);
 
-	  JLabel lblNewLabel_13 = new JLabel("modelo");
-	  lblNewLabel_13.setBounds(10, 129, 46, 14);
+	  JLabel lblNewLabel_13 = new JLabel("Modelo");
+	  lblNewLabel_13.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_13.setBounds(10, 152, 86, 14);
 	  layeredPane_4.add(lblNewLabel_13);
 
-	  JLabel lblNewLabel_14 = new JLabel("cv");
-	  lblNewLabel_14.setBounds(10, 160, 46, 14);
+	  JLabel lblNewLabel_14 = new JLabel("CV");
+	  lblNewLabel_14.setForeground(new Color(0, 0, 0));
+	  lblNewLabel_14.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_14.setBounds(10, 191, 86, 14);
 	  layeredPane_4.add(lblNewLabel_14);
 
 	  JButton btnNewButton_2 = new JButton("Actualizar datos");
+	  btnNewButton_2.setFont(new Font("Baskerville Old Face", Font.BOLD, 20));
 	  btnNewButton_2.setForeground(new Color(255, 255, 255));
-	  btnNewButton_2.setBackground(new Color(102, 0, 0));
-	  btnNewButton_2.setBounds(254, 171, 135, 51);
+	  btnNewButton_2.setBackground(new Color(102, 102, 102));
+	  btnNewButton_2.setBounds(10, 327, 213, 51);
 	  layeredPane_4.add(btnNewButton_2);
 	  
 	  textField_13_2 = new JTextField();
 	  textField_13_2.setColumns(10);
-	  textField_13_2.setBounds(101, 188, 86, 20);
+	  textField_13_2.setBounds(121, 227, 102, 20);
 	  layeredPane_4.add(textField_13_2);
 	  
-	  JLabel lblNewLabel_4 = new JLabel("precio\r\n");
-	  lblNewLabel_4.setBounds(10, 189, 46, 14);
+	  JLabel lblNewLabel_4 = new JLabel("Precio\r\n");
+	  lblNewLabel_4.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_4.setBounds(10, 233, 93, 14);
 	  layeredPane_4.add(lblNewLabel_4);
 	  
 	  textField_1 = new JTextField();
 	  textField_1.setColumns(10);
-	  textField_1.setBounds(101, 219, 86, 20);
+	  textField_1.setBounds(121, 266, 102, 20);
 	  layeredPane_4.add(textField_1);
 	  
-	  JLabel lblNewLabel_4_1 = new JLabel("coche");
-	  lblNewLabel_4_1.setBounds(10, 222, 46, 14);
+	  JLabel lblNewLabel_4_1 = new JLabel("Coche");
+	  lblNewLabel_4_1.setFont(new Font("Baskerville Old Face", Font.PLAIN, 17));
+	  lblNewLabel_4_1.setBounds(10, 272, 93, 14);
 	  layeredPane_4.add(lblNewLabel_4_1);
+	  
+	  JLabel lblNewLabel_17 = new JLabel("New label");
+	  lblNewLabel_17.setIcon(new ImageIcon("C:\\Users\\USUARIO\\eclipse-workspace\\proyecto\\img\\actu.jpg"));
+	  lblNewLabel_17.setBounds(245, 11, 441, 390);
+	  layeredPane_4.add(lblNewLabel_17);
 	  
 	  JPanel panel = new JPanel();
 	  panel.setBackground(new Color(0, 204, 204));
