@@ -58,8 +58,8 @@ public class Almacen extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Almacen frame = new Almacen();
-					frame.setVisible(true);
+					Almacen window = new Almacen();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
