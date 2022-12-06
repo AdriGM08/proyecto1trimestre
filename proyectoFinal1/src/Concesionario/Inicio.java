@@ -142,6 +142,11 @@ public class Inicio extends JFrame {
 		panel.add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("Clientes");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cliente.main(null);
+			}
+		});
 		btnNewButton.setBackground(new Color(153, 0, 0));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
@@ -155,6 +160,11 @@ public class Inicio extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnNewButton_1 = new JButton("Almacén");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Almacen.main(null);
+			}
+		});
 		btnNewButton_1.setBackground(new Color(153, 0, 0));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
@@ -162,6 +172,11 @@ public class Inicio extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Ventas");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ventas.main(null);
+			}
+		});
 		btnNewButton_2.setBackground(new Color(153, 0, 0));
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setFont(new Font("Baskerville Old Face", Font.BOLD, 15));
